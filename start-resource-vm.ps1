@@ -1,4 +1,8 @@
-﻿$SecurePassword = $key | ConvertTo-SecureString -AsPlainText -Force 
+
+﻿#Login to Azure Service principal
+$clientID = "74568bfe-295b-4140-b65e-60f3e04ac4a2"
+$key = "CK8dOWkLgpc~FLhQWC6ZYsG_._tqF4VSE7"
+$SecurePassword = $key | ConvertTo-SecureString -AsPlainText -Force 
 $resourceGroup = "FFAzureDevops"
 $location = "centralus"
 $vmName = "myLinuxVM"
@@ -11,4 +15,4 @@ $tenantID = "88400c81-a389-4bbc-a198-069be0f704b1"
 Add-AzureRmAccount -Credential $cred -TenantId $tenantID -ServicePrincipal
 
 #Start VM
-Start-AzureRmVM -ResourceGroupName FFAzureDevops -Name myLinuxVM 
+Start-AzureRmVM -ResourceGroupName $resourceGroup -Name $vmName 

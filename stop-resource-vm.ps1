@@ -15,4 +15,4 @@ Add-AzureRmAccount -Credential $cred -TenantId $tenantID -ServicePrincipal
 
 #stop vm
 
-Stop-AzureRmVM -ResourceGroupName FFAzureDevops -Name myLinuxVM -Force 
+Stop-AzureRmVM -ResourceGroupName $resourceGroup -Name $vmName -Force 
